@@ -27,7 +27,7 @@ $ touch cpm.cmake
 3b. Move into projectName directory and open it in VS Code:
 ```bash
 $ cd .. # move up one directory
-$ cd projectName # replace with your project name
+$ touch CMakeLists.txt
 $ code . # open folder in 
 ```
 Once in VS Code, open the cpm.cmake file from the File Explorer in the left pane (usually) and copy and paste the following into that file and save:
@@ -70,10 +70,7 @@ If in need of upgrade:
 $ brew upgrade cmake #verify new version was upgraded
 ```
 
-5. Create CMake file in current directory:
-```bash
-$ touch CMakeLists.txt
-```
+
 Once the CMakeLists.txt has been created, open the file in VS Code from the File Explorer in the left pane (usually). 
 
 

@@ -20,39 +20,9 @@ $ mkdir include
 $ mkdir source
 $ touch CMakeLists.txt
 $ cd ..
-$ cd cmake
-$ touch cpm.cmake
-```
-
-3b. Move into projectName directory and open it in VS Code:
-```bash
-$ cd .. # move up one directory
 $ touch CMakeLists.txt
 $ code . # open folder in 
 ```
-Once in VS Code, open the cpm.cmake file from the File Explorer in the left pane (usually) and copy and paste the following into that file and save:
-
-```cmake
-# SPDX-License-Identifier: MIT
-#
-# SPDX-FileCopyrightText: Copyright (c) 2019-2023 Lars Melchior and contributors
-
-set(CPM_DOWNLOAD_VERSION 0.39.0)
-
-set(CPM_DOWNLOAD_LOCATION "${LIB_DIR}/cpm/CPM_${CPM_DOWNLOAD_VERSION}.cmake")
-
-# Expand relative path. This is important if the provided path contains a tilde (~)
-get_filename_component(CPM_DOWNLOAD_LOCATION ${CPM_DOWNLOAD_LOCATION} ABSOLUTE)
-
-file(DOWNLOAD
-     https://github.com/cpm-cmake/CPM.cmake/releases/download/v${CPM_DOWNLOAD_VERSION}/CPM.cmake
-     ${CPM_DOWNLOAD_LOCATION} EXPECTED_HASH SHA256=${CPM_HASH_SUM}
-)
-
-include(${CPM_DOWNLOAD_LOCATION})
-
-```
-
 
 4. Verify that CMake is installed by opening up a new terminal in VS Code:
 ```bash
@@ -104,11 +74,11 @@ add_subdirectory(plugin)
 
 ```
 
-7. Run CMake to build CPM
+7. Run CMake to build project
 ```bash
 $ cmake -S . -B build
 ```
-A successful build should result in the creation of the libs/ directory with a cpm/ and juce/ sub-directories. 
+A successful build should result in the creation of the libs/ directory with a juce/ sub-directory. 
 
 
 8. Copy JUCE templates into project

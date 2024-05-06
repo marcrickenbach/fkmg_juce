@@ -91,7 +91,7 @@ CPMAddPackage(
     GITHUB_REPOSITORY juce-framework/JUCE
     GIT_TAG 7.0.12
     VERSION 7.0.12
-    SOURCE_DIR $(LIB_DIR)/juce
+    SOURCE_DIR ${LIB_DIR}/juce
 )
 
 if (MSVC)

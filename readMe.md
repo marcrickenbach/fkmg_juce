@@ -70,7 +70,6 @@ If in need of upgrade:
 $ brew upgrade cmake #verify new version was upgraded
 ```
 
-
 5. Create CMake file in current directory:
 ```bash
 $ touch CMakeLists.txt

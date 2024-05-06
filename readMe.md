@@ -16,6 +16,7 @@ $ touch .gitignore
 $ mkdir libs
 $ cd libs
 $ git clone --recursive https://github.com/juce-framework/JUCE.git
+$ cd ..
 $ mkdir plugin
 $ cd plugin 
 $ mkdir include

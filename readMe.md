@@ -13,7 +13,9 @@ This file serves as a hub of resources and guides for setting up JUCE projects i
 $ mkdir projectName
 $ cd projectName
 $ touch .gitignore
-$ mkdir cmake
+$ mkdir libs
+$ cd libs
+$ git clone --recursive https://github.com/juce-framework/JUCE.git
 $ mkdir plugin
 $ cd plugin 
 $ mkdir include

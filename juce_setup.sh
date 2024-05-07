@@ -12,11 +12,24 @@ fi
 
 PROJECT_NAME=$1
 
+echo "|/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/|"
+echo "|--------->FKMG AUTOMATED JUCE BUILD SCRIPT<----------|"
+echo "|/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/|"
+echo "                                                       "
+
 # Create Project directory and subdirectories
 mkdir -p "$PROJECT_NAME"/{libs,plugin}
+mkdir .vscode
 
-
+touch "$PROJECT_NAME"/.vscode/launch.json
+touch "$PROJECT_NAME"/.vscode/settings.json
 touch "$PROJECT_NAME"/.gitignore
+touch "$PROJECT_NAME"/README.md
+
+echo "# $PROJECT_NAME READ ME" > "$PROJECT_NAME"/README.md
+echo "This is the README file for the $PROJECT_NAME project" >> "$PROJECT_NAME"/README.md
+echo "To build the project, run the following commands:" >> "$PROJECT_NAME"/README.md
+echo "cmake --build build" >> "$PROJECT_NAME"/README.md
 
 echo "# This is the .gitignore file" > "$PROJECT_NAME"/.gitignore
 echo "libs/JUCE/" >> "$PROJECT_NAME"/.gitignore
@@ -26,8 +39,9 @@ echo "build/" >> "$PROJECT_NAME"/.gitignore
 cd $PROJECT_NAME/plugin
 mkdir include source
 
+echo "                                                       "
 echo "Project Directories Created... "
-
+echo "                                                       "
 
 #Clone JUCE repository into libs directory
 cd ../libs
@@ -38,7 +52,10 @@ if [ ! -d "JUCE" ]; then
 else
     echo "JUCE directory already exists, skipping clone..."
 fi
+
+echo "                                                       "
 echo "JUCE Repository Cloned... "
+echo "                                                       "
 
 # Copy JUCE templates into source folders
 cd "${BASE_PATH}/${PROJECT_NAME}/plugin/include"
@@ -48,7 +65,9 @@ cd "${BASE_PATH}/${PROJECT_NAME}/plugin/source"
 cp "${BASE_PATH}/${PROJECT_NAME}/libs/juce/examples/CMake/AudioPlugin/PluginEditor.cpp" .
 cp "${BASE_PATH}/${PROJECT_NAME}/libs/juce/examples/CMake/AudioPlugin/PluginProcessor.cpp" .
 
+echo "                                                       "
 echo "JUCE Templates Copied... "
+echo "                                                       "
 
 
 # Create CMakelists.txt files
@@ -58,8 +77,8 @@ touch CMakeLists.txt
 cd "${BASE_PATH}/${PROJECT_NAME}"
 touch CMakeLists.txt
 
-# write to the CMakeLists.txt files
 
+# write to the CMakeLists.txt files
 
 ########### 
 
@@ -185,7 +204,9 @@ add_subdirectory(plugin)
 
 EOF
 
+echo "                                                       "
 echo "CMakeLists.txt files created... "
+echo "                                                       "
 
 
 ### Open the project in Visual Studio Code at the Project root directory
@@ -194,12 +215,16 @@ git init
 git add .
 git commit -m "initial commit"
 
+echo "                                                       "
 echo "Git Repository Created..."
+echo "                                                       "
 
 cmake -S . -B build
 cmake --build build
 
+echo "                                                       "
 echo "Project Built... "
 echo "Opening Project in new Visual Studio Code Window... "
+echo "                                                       "
 
 code .

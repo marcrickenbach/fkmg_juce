@@ -67,7 +67,7 @@ Then goto Options > Edit the List of Available Plug-ins to scan for new plugins 
 * JUCE Tutorials : https://juce.com/learn/tutorials/
 
 ## Links
-*. JUCE - https://juce.com/
-*. CMake - https://cmake.org/
-*. VSCode - https://code.visualstudio.com/
+* JUCE - https://juce.com/
+* CMake - https://cmake.org/
+* VSCode - https://code.visualstudio.com/
 

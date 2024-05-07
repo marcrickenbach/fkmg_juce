@@ -19,7 +19,7 @@ echo "                                                       "
 
 # Create Project directory and subdirectories
 mkdir -p "$PROJECT_NAME"/{libs,plugin}
-mkdir .vscode
+mkdir "$PROJECT_NAME"/.vscode
 
 touch "$PROJECT_NAME"/.vscode/launch.json
 touch "$PROJECT_NAME"/.vscode/settings.json

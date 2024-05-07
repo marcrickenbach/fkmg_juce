@@ -36,7 +36,7 @@ A git repository is automatically built at the project level. Create a new repos
 
 
 
-## Getting Started in JUCE
+## Orientation
 
 This only serves as a brief orientation. For more detailed information and examples, refer to the official JUCE documentation and their tutorials, begnining here: https://docs.juce.com/master/tutorial_code_basic_plugin.html
 
@@ -51,6 +51,27 @@ All audio processing is handled from the processBlock() method in the PluginProc
 All GUI components are handled in PluginEditor.cpp.
 
 A Listener is assigned to each control in the PluginEditor.cpp constructor.
+
+
+
+## JUCE with Projucer (MacOS)
+Building a JUCE application with Projucer, JUCE's own Build System, on MacOS requires XCode (see above for instructions on how to build with CMake).
+
+After selecting the appropriate template from which to start to start your project, Projucer will open to a screen of code along with a left side panel containing three sections: File Explorer, Modules and Exporters. To get started, nothing needs to be changed here. 
+
+XCode defaults as the IDE on MacOS. The XCode exporter will appear at the top of the screen next to the dropdown menu for "Selected exporter". Click the icon to open up the produced code in the IDE. 
+
+One thing to note if going this route: for some reason, JUCE names the main files differently when produced by Projucer than in the CMake schema above. Three files are produced here:
+* Main.c
+* MainComponent.c
+* MainComponent.h
+
+WARNING: You should never add, rename, and/or remove source files from JUCE projects inside your native IDE (such as Xcode, Visual Studio). These changes would be overwritten the next time you save the project in Projucer (which re-generates the native IDE projects every time). Instead, always use the Projucer itself to make such changes. (from JUCE Documenation)
+
+All audio processing is handled in getNextAudioBlock() in MainComponent.c/ 
+All GUI components are handled in paint(). 
+
+[note: haven't yet worked directly with a Projucer produced project, this will be updated as I move forward]. 
 
 
 

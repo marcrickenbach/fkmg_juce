@@ -35,11 +35,39 @@ Once CMake is verified, open a terminal in VS Code at the folder in which you wi
 A git repository is automatically built at the project level. Create a new repository on GitHub and follow directions to link the local repository to the remote one. 
 
 
-# Resources
 
+## Getting Started in JUCE
+
+This only serves as a brief orientation. For more detailed information and examples, refer to the official JUCE documentation and their tutorials, begnining here: https://docs.juce.com/master/tutorial_code_basic_plugin.html
+
+Each project begins with two core template source files and their respective headers:
+* PluginEditor.cpp
+* PluginEditor.h
+* PluginProcessor.cpp
+* PluginProcessor.h
+
+All audio processing is handled from the processBlock() method in the PluginProcessor.cpp file. This is where all audio and MIDI data is received and produced. 
+
+All GUI components are handled in PluginEditor.cpp.
+
+A Listener is assigned to each control in the PluginEditor.cpp constructor.
+
+
+
+## Debugging
+
+JUCE offers a plug-in host for testing. The .jucer file for this host application is available in JUCE > extras > AudioPluginHost > AudioPluginHost.jucer. Open this file with Projucer, Save Project and Open in IDE then build the project in the IDE of your choice (XCode, VisualStudio, etc.).
+
+Then goto Options > Edit the List of Available Plug-ins to scan for new plugins on your system (presumably the one you've just built). 
+
+
+
+# Resources
+* JUCE Documentation : https://docs.juce.com/master/index.html
+* JUCE Tutorials : https://juce.com/learn/tutorials/
 
 ## Links
-JUCE - https://juce.com/
-CMake - https://cmake.org/
-VS Code - https://code.visualstudio.com/
+*. JUCE - https://juce.com/
+*. CMake - https://cmake.org/
+*. VSCode - https://code.visualstudio.com/
 

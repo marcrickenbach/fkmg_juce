@@ -22,6 +22,7 @@ If in need of upgrade:
 $ brew upgrade cmake #verify new version was upgraded
 ```
 
+### Running Build Task
 Once CMake is verified, open a terminal in VS Code at the folder in which you wish to set up your JUCE plugin. 
 
 1. Open the VSCode Command Palette (MacOS: CMD + SHIFT + P)

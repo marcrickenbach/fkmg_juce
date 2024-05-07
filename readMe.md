@@ -36,8 +36,7 @@ A git repository is automatically built at the project level. Create a new repos
 
 
 # Resources
-## Tutorials
-WolfSound Tuturial : https://www.youtube.com/watch?v=Uq7Hwt18s3s
+
 
 ## Links
 JUCE - https://juce.com/

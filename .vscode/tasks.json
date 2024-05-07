@@ -1,0 +1,26 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Setup JUCE Project",
+            "type": "shell",
+            "command": "./juce_setup.sh",
+            "args": [
+                "${input:projectNameInput}"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "id": "projectNameInput",
+            "type": "promptString",
+            "description": "Enter the project name"
+        }
+    ]
+}

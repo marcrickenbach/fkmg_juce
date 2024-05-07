@@ -1,9 +1,9 @@
-## Setting Up a JUCE Project
+# Setting Up a JUCE Project
 
 This file serves as a hub of resources and guides for setting up JUCE projects in various environments. The goal is eventually to have a Dockerfile or Vagrant configuration for turnkey project setup within a container or Virtual Machine (Linux). 
 
 
-# JUCE with CMake in VS Code (MacOS)
+## JUCE with CMake in VS Code (MacOS)
 These instructions will automatically build a JUCE Plugin template. First you'll want to verify that you have the correct tools, including CMake. This is a work in progress, so please raise an issue if tools need to be verified by the script to make the build as hands-off as possible. 
 
 First, verify that CMake is installed by opening up a new terminal in VS Code:
@@ -34,11 +34,11 @@ Once CMake is verified, open a terminal in VS Code at the folder in which you wi
 A git repository is automatically built at the project level. Create a new repository on GitHub and follow directions to link the local repository to the remote one. 
 
 
-## Resources
-# Tutorials
+# Resources
+## Tutorials
 WolfSound Tuturial : https://www.youtube.com/watch?v=Uq7Hwt18s3s
 
-# Links
+## Links
 JUCE - https://juce.com/
 CMake - https://cmake.org/
 VS Code - https://code.visualstudio.com/
